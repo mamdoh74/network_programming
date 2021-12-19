@@ -1,0 +1,7 @@
+not sucessfull login
+not sucessfull login
+sucessfull login
+
+SERVER> ECHO: ads
+
+SERVER> ECHO: dsada
