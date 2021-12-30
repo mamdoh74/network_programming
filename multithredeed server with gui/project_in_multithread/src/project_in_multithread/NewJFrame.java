@@ -5,6 +5,8 @@
  */
 package project_in_multithread;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author CompuHome
@@ -16,6 +18,7 @@ public class NewJFrame extends javax.swing.JFrame {
      */server_v1 server=new server_v1();
      client_v1 client1=new client_v1();
      client_v2 client2=new client_v2();
+     public boolean login;
      
     public NewJFrame() {
         initComponents();
@@ -289,7 +292,6 @@ public class NewJFrame extends javax.swing.JFrame {
         String password=txt_password_client1.getText().toString();
         client1.initial_a_client();
         client1.login(username, password);
-        
         txt_client1.setText(client1.getall());
         txt_client2.setText(client2.getall());
         

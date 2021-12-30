@@ -21,6 +21,8 @@ public class ClientHandler extends Thread {
     private PrintWriter output;
     server_v1 server1=new server_v1();
     serverform s1=new serverform();
+    
+    
     public ClientHandler(Socket socket)
     {
         client=socket;
@@ -41,13 +43,12 @@ public class ClientHandler extends Thread {
                     Scanner read = new Scanner(loginf);
                     
                     do{
-                        
                            String user = read.next();
                            String pass = read.next();
-                           
                            System.out.println(user+" ==>"+pass);
                            if(username.equals(user) && password.equals(pass)){
-                              login = true;
+                              login=true;
+                              
                               break;                 
                            }
                         }
@@ -61,13 +62,16 @@ public class ClientHandler extends Thread {
                 
                 return login;
     }
+    
     public void run()
     {
         String username=input.nextLine();
         String password=input.nextLine();
-        if(login(username,password))
+        if(login(username,password)){
         output.println("sucessfull login");
-        else output.println("not sucessfull login");
+        }
+        else {output.println("not sucessfull login");
+        }
         if(login(username,password))
         {
         String received="";
